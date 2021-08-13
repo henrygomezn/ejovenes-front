@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.navbar{
+    background: #4EC3C7;
+}
+.container{
+    background-color: #F2F2F2;
+}
+#textoCard{
+    font-family:  'openSans-condensed-lightItalic';
+    font-size: 25pt;
+}
+
+h1{
+    font-family: 'Rubik-Bold';
+    font-size: 38pt;
+}
+
+#numCard{
+    font-family: 'openSans-condensed-bold';
+    font-size: 8rem;
+}
+#cardUser{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 200px;
+}
+
+#cardCuentos{
+    background-color: rgba(250, 157, 51, 0.726);
+    height: 200px;
+}
+
+#cardVotos{
+    background-color: rgba(118, 171, 250, 0.795);
+    height: 200px;
+}
+
+.btn {
+    background: #4EC3C7;
+    border-radius: 4px;
+  
+    color: #ffffff;
+   font-size: 16px;
+   font-family: "Rubik-Bold";
+    padding: 5px 40px;
+  }
+
+  #cardNoticias{
+    background-color: rgba(85, 168, 85, 0.795);
+    height: 200px;
+}

@@ -1,0 +1,53 @@
+.jumbotron{
+    background-color: #F2F2F2;
+  
+}
+
+.btn {
+  margin-top: 1em;
+  background: #4EC3C7;
+  border-radius: 4px;
+
+  color: #ffffff;
+ font-size: 16px;
+ font-family: "Rubik-Bold";
+  padding: 10px 40px;
+ 
+   
+    width: 300px;
+  }
+  
+  .btn:hover {
+    background: #4EC3C7;
+    text-decoration: none;
+  }
+
+  #wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type=text]{
+    background-color: #F7F7F7;
+    margin-bottom: 2vh;
+  }
+  
+  textarea{
+    background-color: #F7F7F7;
+  }
+ 
+h1{
+  font-family: "Rubik-Bold";
+  font-size: 28px;
+}
+h2{
+  font-family: "OpenSans-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #4EC3C7;
+  margin-bottom: 2vh;
+}

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg">
+  <a href="#" class="navbar-brand"><img src="../assets/principal_300px.png" id="imgLogo" alt=""></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="bi bi-caret-down-fill"></i></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+  
+      <li class="nav-item">
+        <a class="nav-link" href="/misCuentos">Mis Cuentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/subirCuento">Subir Cuentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/participaciones">Ver Cuentos</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+      <button class="btn" id="btnLogout"><a href class="nav-link" (click)="logout()">Cerrar Sesión</a></button> 
+      </li>
+    </ul>
+  </div>
+</nav>

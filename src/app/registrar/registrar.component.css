@@ -1,0 +1,52 @@
+.btn {
+  background: #4EC3C7;
+  border-radius: 4px;
+
+  color: #ffffff;
+ font-size: 16px;
+ font-family: "Rubik-Bold";
+  padding: 10px 40px;
+  
+  border: none;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn:hover {
+    background: #4EC3C7;
+  
+  }
+
+  input[type=text]{
+    border-radius: 4px;
+    -webkit-appearance: none;
+    
+    margin-bottom: 1vh;
+  }
+  
+  input[type=password]{
+    border-radius: 4px;
+    -webkit-appearance: none;
+ 
+    margin-bottom: 1vh;
+  }
+
+  select{
+    border-radius: 4px;
+
+    margin-bottom: 1vh;
+  }
+
+select{
+    margin-bottom: 1vh;
+}
+
+.modal-content{
+    background-color:#F2F2F2 ;
+}
+
+#exampleModalLongTitle{
+  font-family: 'Rubik-Bold';
+  font-size: 28px;
+}

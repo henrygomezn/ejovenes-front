@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<div class="jumbotron">
+    <div class="card">
+        <div class="card-body" *ngIf="cargaDatos">
+        
+        <div class="row">
+          <div class="col-sm-2">
+
+          </div>
+          <div class="col-sm-3">
+<img src="../../assets/img-test.jpg" id="imgCuento" alt="" *ngIf=!flagImg>
+<img src="{{api}}{{ficha.urlAvatar}}" id="imgCuento"  alt="" *ngIf=flagImg>
+
+          </div>
+          <div class="col-sm-5">
+            <div id="wrapper" >
+         
+              <div id="tit" >
+                    {{ficha.titulo}} 
+              </div>
+           
+            </div>
+            <div id="wrapper" >
+              <div id="tit2" >
+             AUTOR:   {{ficha.autor}} 
+          </div>
+            </div>
+    
+            <div id="wrapper" >
+              <div  >
+                <br>
+                {{ficha.descripcion}}
+          </div>
+            </div>
+       
+       
+
+          </div>
+          <div class="col-sm-2">
+
+<div id="wrapper">
+  <div id="contador">
+    {{ficha.contVotos}} 
+  </div>
+  <div id="textoCont">
+       VOTOS
+  </div>
+  </div>
+
+</div>
+        
+
+
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm-2">
+         
+          </div>
+          <div class="col-sm-8" >
+    
+  
+ 
+          
+      <a [href]="pdfSource">    <pdf-viewer [src]="pdfSource"
+            [zoom]="1"
+                        [show-borders]="true"
+            ></pdf-viewer></a>
+        <br><br>
+ 
+              </div>
+          <div class="col-sm-2">
+            <div id="wrapper"> 
+              <button class="btn" (click)="registrarVoto(ficha.id)" *ngIf=flagVotacion>VOTAR</button>
+              <div *ngIf=!flagVotacion><br>Ya has votado por este cuento!</div>
+            </div>
+           
+ 
+
+              </div>
+        </div>
+        
+
+        </div>
+      </div>
+</div>

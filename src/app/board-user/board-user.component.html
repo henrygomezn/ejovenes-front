@@ -1,0 +1,201 @@
+<app-navbar></app-navbar>
+<div *ngIf="loading">
+
+
+<div class="container-fluid" style="padding-top: 1vh;">
+
+
+
+
+  <div class="row">
+    <div class="col-sm-1">
+
+    </div> 
+    <div class="col-sm-10">
+      <div id="boxWelcome">
+    <div id="welcomeBox"> <h5>¡ BIENVENIDO {{nameWelcome}} !</h5></div>
+      </div>
+      <div class="card">
+      <div class="row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-3">
+          <div class="card" id="cardPrincipal">
+            <div class="card-header">
+              
+              <div class="row">
+             
+             <div id="iconTest"> <i class="bi bi-bell" style="color: black;"></i> </div>
+             
+             &nbsp;&nbsp; Noticias
+
+              </div>
+              
+
+
+
+            </div>
+            <div class="card-body">
+               <div *ngIf="!cargaNews">
+                  No hay nuevas Noticias.                 
+               </div>
+               <div *ngIf=cargaNews>
+                  <div class="row">
+                         <div class="col-sm-12" *ngFor= "let value of noticia; let i = index" >
+                          <strong>{{value.titulo}}:</strong> {{value.cuerpo}}
+                         </div>
+                  </div>
+               </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-sm-6">
+      
+          <div class="card" id="cardPrincipal">
+            <div class="card-header">
+              
+              <div class="row">
+             
+             <div id="iconTest"> <i class="bi bi-people" style="color: black;"></i>  </div>
+             
+             &nbsp;&nbsp; Perfil
+
+              </div>
+              
+
+
+
+            </div>
+            <div class="card-body">
+              
+              <div class="row">
+
+                <div class="col-sm-4">
+                  <div id="wrapper"> 
+            <img src="../../assets/img_avatar3.png" width="150px" style="border-radius: 50%; margin-bottom: 1vh;"  *ngIf=flag alt="">
+            <img src="../../assets/img_avatarfem.png" width="150px" style="border-radius: 50%; margin-bottom: 1vh;"  *ngIf=!flag alt="">
+                  </div>
+                </div>
+
+                <div class="col-sm-8">
+                 <br><br>
+                 
+                  <strong><i class="bi bi-person-fill"></i>   &nbsp;&nbsp;NOMBRE:</strong> {{tokenStorageService.getUser().username}} <br>
+                  <strong><i class="bi bi-envelope"></i>   &nbsp;&nbsp;Correo:</strong> {{tokenStorageService.getUser().correo}} <br>
+                  <strong><i class="bi bi-file-binary-fill"></i>   &nbsp;&nbsp;RUT:</strong> {{tokenStorageService.getUser().rut}} <br>
+                  <strong><i class="bi bi-journal-text"></i>  &nbsp;&nbsp;CURSO:</strong> {{tokenStorageService.getUser().curso}} <br>
+                  <strong><i class="bi bi-telephone-fill"></i>   &nbsp;&nbsp;TELEFONO:</strong> {{tokenStorageService.getUser().telefono}} <br>
+             
+                </div>
+
+              </div>
+              
+
+
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-sm-2">
+
+        </div>
+
+      </div>
+     
+      <div id="wrapper"> 
+
+        <div class="row">
+
+          <div class="col-sm">
+            <button class="btn" (click)=navegador(1)>Mis Cuentos
+            </button>
+          
+          </div>
+          <div class="col-sm">
+            <button class="btn"  (click)=navegador(2)>Subir Cuento
+            </button>
+          
+          </div>
+          <div class="col-sm">
+            <button class="btn" (click)=navegador(3)>Ver Cuentos
+            </button>
+          
+          </div>
+     
+          </div>
+      
+   
+
+
+      </div>
+    </div> 
+    <div class="col-sm-1">
+
+    </div> 
+
+
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
+ <div id="testBox">
+  <div class="container">
+    <h1> <br>
+            MÁS VOTADOS</h1>
+  <div class="row" *ngIf="cargaVotados">
+    <div class="col-sm-4" style="margin-top: 5vh;margin-bottom: 5vh;"  *ngFor= "let value of last; let i = index" >
+ 
+      <div class="card">
+        <div class="card-body">
+           
+          <div class="row">
+            <div class="col-sm-1" style="float: left;">
+             <h1 >{{i+1}}</h1>
+                  </div>
+              <div class="col-sm-1">
+          <img src="{{api}}{{value.urlAvatar}}" width="50px" height="50px"  *ngIf=value.urlAvatar alt="">
+          <img src="../../assets/img-test.jpg" width="50px" height="50px" *ngIf=!value.urlAvatar alt="">
+              </div>
+              <div class="col-sm-8" style="margin-left: 2vw">
+              <strong>{{value.titulo}}</strong>  <br>
+            {{value.contVotos}} Votos <br>
+               <h3>{{value.created_at | date:"shortDate" }}</h3>
+                 
+              </div>
+          </div>
+          
+
+
+        </div>
+      </div>
+
+    </div>
+ 
+
+  </div>
+
+  <div *ngIf="!cargaVotados">
+ No existen cuentos cargados
+  </div>
+</div>
+ </div>
+
+
+
+
+</div>

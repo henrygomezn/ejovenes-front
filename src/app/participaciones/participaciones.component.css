@@ -1,0 +1,35 @@
+.jumbotron{
+    background-color: #F2F2F2;
+}
+
+.col-sm{
+    margin-bottom: 1cm;
+  font-weight: bolder;
+  display: flex;
+   align-items: center;
+}
+
+#titLast{
+    font-family:'Rubik-Bold' ;
+    font-size: 28px;
+}
+
+#btnInput{
+    color: #4EC3C7;
+    border: 2px solid #4EC3C7;
+box-sizing: border-box;
+border-radius: 4px;
+
+}
+
+input[type=text]{
+    background-color: #F2F2F2;
+}
+
+#titSecon{
+    color: #4EC3C7;
+    font-family: 'OpenSans-SemiBold';
+}
+h5{
+   color: rgba(167, 167, 167, 0.719);
+}

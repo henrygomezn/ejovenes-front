@@ -1,0 +1,57 @@
+<div *ngIf="cargaDatos">
+
+    <nav class="navbar navbar-light ">
+        <a class="navbar-brand" href="/adminAccess/admin"><img src="../assets/principal_300px.png" width="100" alt=""></a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()" style="color: white;">Cerrar Sesión</a>
+            </li>
+        </ul>
+      </nav>
+      <div class="wrapper">
+        <app-sidebar></app-sidebar>
+    
+        <div class="container">
+         
+            
+            <div class="card">
+                <div class="card-body">
+            
+                    <table class="table table-bordered" *ngIf=cargaDatos>
+                        <tr>
+                          <th>ID</th>
+                          <th>TITULO</th>
+                          <th>CUERPO</th>
+                          <th>FECHA</th>
+                          <th>ELIMINAR</th>
+                        </tr>
+                        <tr *ngFor="let item of data | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                          <td>{{item.id}}</td>
+                          <td>{{item.titulo}}</td>
+                          <td>{{item.cuerpo}}</td>
+                          <td>{{item.created_at | date:"short" }}</td>
+                          <td>  <button class="btn btn-danger" (click)=eliminar(item.id)><i class="bi bi-x-circle"></i> </button>   </td>
+                        </tr>
+                      </table>
+                      
+                      <ngb-pagination [pageSize] = "10" [collectionSize]="totalElem" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+                
+                      <hr>
+                      
+                      <pre>Pagina actual: {{page}}</pre>
+                      
+    
+                </div>
+              </div>
+    
+    
+        </div>
+      </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    

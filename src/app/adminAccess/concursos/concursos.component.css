@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.navbar{
+    background: #4EC3C7;
+}
+.container{
+    background-color: #F2F2F2;
+}
+H1{
+    font-family: 'openSans-condensed-bold';
+}
+
+
+#btnAgregar {
+    background: #4EC3C7;
+    border-radius: 4px;
+  
+    color: #ffffff;
+   font-size: 16px;
+   font-family: "Rubik-Bold";
+    padding: 5px 40px;
+  }

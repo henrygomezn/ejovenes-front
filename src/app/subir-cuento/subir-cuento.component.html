@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div class="jumbotron">
+
+    <div class="card">
+        <div class="card-body">
+     
+
+        <div class="row">
+
+   <div class="col-sm-2">
+
+   </div>
+
+   <div class="col-sm-8">
+
+
+    <img src="../../assets/banner-test.jpg" alt="" style="width: 100%;margin-bottom: 5vh;">
+    <form
+    name="newCuento"
+    (ngSubmit)="onSubmit(imageInput,pdfInput)"
+    #f="ngForm"
+    novalidate
+  >
+  <h1>Subir Cuento</h1>
+  <h2>En el siguiente formulario puedes subir tu cuento a nuestra plataforma</h2>
+    <input
+    type="text"
+    placeholder="Titulo"
+    class="form-control"
+    name="titulo"
+    [(ngModel)]="newCuento.titulo"
+    required
+    #titulo="ngModel"
+  />
+
+  <input
+  type="text"
+  placeholder="Autor"
+  class="form-control"
+  name="autor"
+  [(ngModel)]="newCuento.autor"
+  required
+  #autor="ngModel"
+/>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripción</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"  [(ngModel)]="newCuento.descripcion" required #descripcion="ngModel" placeholder="Breve descripción máximo 300 caracteres" ></textarea>
+  </div>
+
+  <div id="wrapper">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Subir Imagen (Opcional)</label>
+    <input  #imageInput
+    type="file"
+    accept="image/*" class="form-control-file" id="exampleFormControlFile1" > 
+  </div>
+</div>
+
+<div id="wrapper">
+  <div class="form-group">
+    <label for="exampleFormControlFile2">Subir PDF (Obligatorio)</label>
+    <input  #pdfInput
+    type="file"
+    accept="application/pdf" class="form-control-file" id="exampleFormControlFile2"  required> 
+  </div>
+</div>
+
+  <div id="wrapper">
+    <button class="btn" type="submit" [disabled]="f.invalid"> Subir Cuento</button>
+  </div>
+
+    </form>
+
+    
+</div>
+   <div class="col-sm-2">
+
+</div>
+
+        </div>
+            
+           
+
+        </div>
+      </div>
+
+</div>

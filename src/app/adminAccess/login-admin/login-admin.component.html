@@ -1,0 +1,93 @@
+
+  
+<div class="container" style="height: 90vh;">
+
+<div id="caja" >
+
+
+
+
+    <img src="../../assets/principal_300px.png" alt="" id="logo">
+   
+    <h1> <br> ACCESO ADMINISTRADOR</h1>
+
+    <form
+        *ngIf="!isLoggedInAdmin"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="correo"></label>
+          <input
+            type="text"
+            placeholder="Email"
+            class="form-control"
+            name="correo"
+            [(ngModel)]="form.correo"
+            required
+            #correo="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && correo.invalid"
+          >
+          Se requiere Email
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password"></label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Contraseña"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && password.invalid"
+          >
+            <div *ngIf="password.errors.required">Se requiere contraseña</div>
+            <div *ngIf="password.errors.minlength">
+              La contraseña debe tener al menos 6 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <br>
+          <button class="btn">
+            Iniciar Sesion
+          </button>
+          <br><br><br>
+  
+        </div>
+  
+
+    
+        <div class="form-group">
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed"
+          >
+            Inicio de Sesion fallido: Correo o contraseña incorrectos
+          </div>
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isLoggedInAdmin">
+        Inicio de sesion exitoso! Pero el usuario no tiene permisos administrador <br>
+          <button class="btn" (click)="logout()"> Volver al Acceso administrador</button> --
+      <a href="">  <button class="btn" (click)="logout()"> Volver al Acceso normal</button></a>   
+      </div>
+
+          
+</div>
+</div>

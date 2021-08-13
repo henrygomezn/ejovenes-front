@@ -1,0 +1,111 @@
+
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sm-9" id="fondo">
+<div class="row">
+  <h1> ¿Eres escritor / escritora?</h1> 
+  <h2> ¿Buscas que tus escritos sean vistos por más personas? </h2>
+</div>
+
+</div>
+
+<div class="col-sm-3" id="cajaLogin" >
+  <div id=wrapper>
+  <img src="../../assets/version_color.png" alt="" id="logo">
+</div>
+  <form
+      *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="correo"></label>
+        <input
+          type="text"
+          placeholder="Email"
+          class="form-control"
+          name="correo"
+          [(ngModel)]="form.correo"
+          required
+          #correo="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && correo.invalid"
+        >
+        Se requiere Email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password"></label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Contraseña"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && password.invalid"
+        >
+          <div *ngIf="password.errors.required">Se requiere contraseña</div>
+          <div *ngIf="password.errors.minlength">
+            La contraseña debe tener al menos 6 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <br>
+  
+        <button class="btn container" >
+          Iniciar Sesión
+        </button>
+     
+        <br><br><br>
+      
+      </div>
+
+      ¿Aun no tienes cuenta? <a href data-toggle="modal" data-target="#addUser" style="color:#4EC3C7 ;">Regístrate</a> 
+
+      
+      <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUser" aria-hidden="true">
+    <app-registrar></app-registrar>
+      </div>
+
+
+
+      
+  
+      <div class="form-group">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && isLoginFailed"
+        >
+          Inicio de Sesion fallido: Correo o contraseña incorrectos
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Inicio de sesión exitoso! 
+    </div>
+
+</div>
+
+
+  </div>
+
+</div>
+
+
+
+

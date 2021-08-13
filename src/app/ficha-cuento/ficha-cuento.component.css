@@ -1,0 +1,70 @@
+.jumbotron{
+    background-color: #F2F2F2;
+}
+
+#wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+#tit{ 
+  font-family: 'Rubik-Bold';
+    font-size: 40pt;
+    margin-top: 5vh;;
+
+    text-align: center;
+}
+
+#tit2{
+    font-family: 'openSans-SemiBold';
+    font-size: 18px;
+    color: #4EC3C7;
+}
+
+.col-sm-8{
+    margin-top: 1cm;
+}
+
+#contador{
+    font-family: 'openSans-condensed-bold', 'arial', sans-serif;
+    font-size: 80pt;
+    color: #FF9771;
+}
+#textoCont{
+    font-family: 'openSans-condensed-lightItalic', 'arial', sans-serif;
+    color: #FF9771;
+    font-size: 32pt;
+}
+
+.btn{
+    padding: 10px 40px;
+    background: #FF9771;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Rubik-Bold';
+    font-size: 16px;
+
+}
+
+.btn:hover{
+    background-color: #ff874779;
+}
+
+pdf-viewer {
+  display:flex;
+  height: 50vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(5px 5px 5px #222222);
+  }
+  
+#imgCuento{
+    border-radius: 25px; 
+    height: 300px; 
+    width: 100%;
+    border: 1px solid #F2F2F2;
+}

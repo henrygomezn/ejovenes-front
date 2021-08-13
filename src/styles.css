@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'openSans';
+    src: url(assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: 'openSans-condensed-bold';
+    src: url(assets/fonts/OpenSansCondensed-Bold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: 'Rubik-Bold';
+    src: url(assets/fonts/Rubik-Bold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: 'openSans-condensed-lightItalic';
+    src: url(assets/fonts/OpenSansCondensed-LightItalic.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: 'openSans-SemiBold';
+    src: url(assets/fonts/OpenSans-SemiBold.ttf) format("truetype");
+  }
+
+  html {
+    min-height: 90%;
+    position: relative;
+    background-color: #F2F2F2;
+
+  }
+
+  body {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: 'openSans';
+    background-color: #F2F2F2;
+  }
+
+  
+  footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+  }
+
+  

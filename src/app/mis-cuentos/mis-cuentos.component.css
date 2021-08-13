@@ -1,0 +1,39 @@
+.jumbotron{
+    height: 75vh;
+    background-color: #F2F2F2;
+}
+
+.btn {
+  margin-top: 1em;
+  background: #4EC3C7;
+  border-radius: 4px;
+
+  color: #ffffff;
+ font-size: 16px;
+ font-family: "Rubik-Bold";
+  padding: 10px 40px;
+ 
+    width: 300px;
+  }
+  
+  .btn:hover {
+    background: #4EC3C7;
+    text-decoration: none;
+  }
+
+  #wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card{
+    background-color: #F2F2F2;
+    
+  }
+
+  h2{
+    font-family: 'openSans-condensed-bold', 'arial', sans-serif;
+    font-size: 38pt;
+  }

@@ -1,0 +1,39 @@
+.navbar  {
+    background-color: #262626;
+    
+   
+}
+
+.nav-link{
+ color: white;
+}
+
+#imgLogo{
+   
+width: 99.44px;
+height: 39.49px;
+left: 37.56px;
+top: 13px;
+}
+
+#btnLogout{
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+background-color:#4EC3C7 ;
+font-family:'Rubik-Bold';
+}
+
+
+.navbar-toggler{
+    background-color: #4EC3C7;
+    color: white !important;
+}
+
+.navbar-toggler-icon{
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

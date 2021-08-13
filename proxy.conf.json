@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target":"https://hidden-fjord-37069.herokuapp.com/",
+        "secure":false,
+        "loglevel":"debug"
+    }
+}

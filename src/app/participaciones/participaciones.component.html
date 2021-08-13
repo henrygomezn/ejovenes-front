@@ -1,0 +1,188 @@
+<app-navbar></app-navbar>
+
+<div class="jumbotron">
+
+
+
+
+
+    <div class="card">
+        <div class="card-body">
+            <form
+            name="searchId"
+            (ngSubmit)="buscarId(id)"
+            #f="ngForm"
+            novalidate
+          >
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Ingrese ID del cuento a buscar"  name="cuento_id"
+                [(ngModel)]="searchId.cuento_id"
+                required
+                #cuento_id="ngModel" >
+
+
+                <div class="input-group-append">
+                  <button class="btn" id="btnInput" type="button" (click)=buscarId(searchId.cuento_id) >BUSCAR POR ID</button>
+                </div>
+              </div>
+
+            </form>
+<br><br>
+
+<form
+name="searchTit"
+(ngSubmit)="buscarTit(titulo)"
+#f="ngForm"
+novalidate
+>
+
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Ingrese el Titulo del cuento o parte de este para buscar" name="titulo"
+    [(ngModel)]="searchTit.titulo"
+    required
+    #titulo="ngModel" >
+    <div class="input-group-append">
+      <button class="btn" id="btnInput" type="button" (click)=buscarTit(searchTit.titulo)>BUSCAR POR TITULO</button>
+    </div>
+  </div>
+
+</form>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="card" *ngIf=cargaDatosId>
+        <div class="card-body">
+            <div id="titLast"> Resultados por ID:</div>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+
+                <div class="col">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-sm-4">
+                                    <img src="{{api}}{{searchId.urlAvatar}}" width="150px" height="150px" alt="" *ngIf="searchId.urlAvatar">
+                                    <img src="../../assets/150x150.png" width="150px" height="150px" alt="" *ngIf="!searchId.urlAvatar">
+                                </div>
+                                <div class="col-sm-8">
+                                    <br> 
+                                    <strong>TITULO:</strong>      {{searchId.titulo}} <br>
+                                    <strong>AUTOR:</strong>      {{searchId.autor}}  <br>
+                                    
+                                           <br>
+                                    <button class="btn" style="color: #4EC3C7;" (click)=asignarId(searchId.id)> <i class="bi bi-eye" style="color: #4EC3C7;" ></i>  Ver más > </button>
+                                </div>
+                            </div>
+               
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="card" *ngIf=cargaDatosTit>
+        <div class="card-body">
+            <div id="titLast"> Resultados por Titulo:</div>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+
+                <div class="col" *ngFor= "let value of searchTit; let i = index">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-sm-4">
+                                    <img src="{{api}}{{value.urlAvatar}}" width="150px" height="150px" alt="" *ngIf="value.urlAvatar">
+                                    <img src="../../assets/150x150.png" width="150px" height="150px" alt="" *ngIf="!value.urlAvatar">
+
+                                </div>
+                                <div class="col-sm-8">
+                                    <br> 
+                                    <strong>TITULO:</strong>      {{value.titulo}} <br>
+                                    <strong>AUTOR:</strong>      {{value.autor}}  <br>
+                                    
+                                           <br>
+                                    <button class="btn" style="color: #4EC3C7;" (click)=asignarId(value.id)> <i class="bi bi-eye" style="color: #4EC3C7;"></i>  Ver más > </button>
+                                </div>
+                            </div>
+               
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+      </div>
+
+ <br>
+
+    <div class="card">
+        <div class="card-body">
+         <div id="titLast"> Ultimos Cuentos</div>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+         
+                <div class="col" *ngFor= "let value of ultimo; let i = index">
+
+                    <div class="card">
+                   
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-sm-4">
+
+                                    <img src="{{api}}{{value.urlAvatar}}" width="150px" height="150px" alt="" *ngIf="value.urlAvatar">
+                                    <img src="../../assets/150x150.png" width="150px" height="150px" alt="" *ngIf="!value.urlAvatar">
+                                 
+
+                                </div>
+                             
+                                <div class="col-sm-8">
+                                    <br> 
+                                    &nbsp;&nbsp;     <strong id="titSecon">TITULO:</strong>      {{value.titulo}} <br>
+                                    &nbsp;&nbsp;    <strong id="titSecon">AUTOR:</strong>      {{value.autor}}  
+                                       <h5>  &nbsp;&nbsp;{{value.created_at  | date: "shortDate"}}</h5>
+                                    
+                                           <br>
+                                    <button class="btn" style="color: #4EC3C7;" (click)=asignarId(value.id)> <i class="bi bi-eye" style="color: #4EC3C7;"></i>  Ver más > </button>
+                                </div>
+                            </div>
+               
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+      </div>
+
+</div>
+
+
